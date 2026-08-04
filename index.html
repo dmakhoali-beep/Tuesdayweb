@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ivy Africa — Technology, Training & Digital Transformation</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .hero-video-wrap{position:absolute;inset:0;overflow:hidden;z-index:0;}
+  .hero-video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,.88) 0%,rgba(15,23,42,.65) 50%,rgba(15,23,42,.82) 100%);z-index:1;}
+  .hero-content{position:relative;z-index:2;}
+  .division-card{background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;transition:var(--transition-base);}
+  .division-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -12px rgba(0,0,0,.1);}
+  .division-card .div-img{height:200px;background:linear-gradient(135deg,var(--bg-secondary),var(--bg-tertiary));display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+  .division-card .div-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .division-card:hover .div-img img{transform:scale(1.05);}
+  .division-card .div-body{padding:1.75rem;}
+  .division-card .div-tag{display:inline-block;padding:.25rem .75rem;background:var(--accent-glow);color:var(--accent-primary);font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-radius:100px;margin-bottom:.75rem;}
+  .division-card h3{font-size:1.125rem;font-weight:700;margin-bottom:.5rem;}
+  .division-card p{font-size:.875rem;color:var(--text-secondary);line-height:1.6;margin-bottom:1rem;}
+  .division-card .div-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--accent-primary);}
+  .division-card .div-link svg{width:14px;height:14px;transition:transform .2s;}
+  .division-card:hover .div-link svg{transform:translateX(4px);}
+  .stats-bar{display:flex;gap:3rem;padding:2rem 0;margin-top:3rem;border-top:1px solid rgba(255,255,255,.1);}
+  .stat-item h4{font-size:2rem;font-weight:800;color:#fff;line-height:1;}
+  .stat-item p{font-size:.8125rem;color:rgba(255,255,255,.6);margin-top:.25rem;}
+  @media(max-width:768px){.stats-bar{flex-direction:column;gap:1.5rem;}}
+</style>
+</head>
+<body>
+
+<header class="site-header dark-mode" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link">
+      <img src="logo.svg" alt="Ivy Africa" class="logo-img">
+      <span class="logo-text">Ivy <span>Africa</span></span>
+    </a>
+    <nav class="nav-desktop">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <div class="dropdown">
+        <button class="nav-link dropdown-toggle">Offerings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-menu">
+          <a href="training.html" class="dropdown-item">Training & Certification</a>
+          <a href="technology.html" class="dropdown-item">Technology Solutions</a>
+          <a href="smme.html" class="dropdown-item">SMME Development</a>
+          <a href="consultancy.html" class="dropdown-item">Consultancy</a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header">K12 & Ed-Tech</div>
+          <a href="higher-ed.html" class="dropdown-item">Higher Education</a>
+          <a href="tvet.html" class="dropdown-item">TVET Colleges</a>
+          <a href="basic-ed.html" class="dropdown-item">Basic Education</a>
+        </div>
+      </div>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <button class="nav-link" onclick="document.getElementById('searchOverlay').classList.add('active')" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <a href="contact.html" class="header-cta">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" onclick="document.getElementById('searchOverlay').classList.remove('active')">&times;</button>
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search courses, solutions, partners..." id="searchInput">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<!-- HERO WITH VIDEO BACKGROUND -->
+<section class="hero" style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--navy-900);">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline poster="hero-poster.jpg">
+      <source src="hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-bg-mesh"></div>
+  <div class="particles" id="particles"></div>
+  <div class="section-inner hero-content" style="padding-top:100px;">
+    <div style="max-width:720px;">
+      <span class="section-label" style="background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.25);color:#34d399;">Empowering Africa's Digital Future</span>
+      <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);color:#fff;margin:1.25rem 0;">Technology, Training &<br><span class="text-gradient">Transformation</span></h1>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.75);font-size:1.125rem;max-width:560px;">Ivy Africa partners with organisations across the continent to deliver world-class IT solutions, accredited training, and strategic consultancy.</p>
+      <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#divisions" class="btn btn-primary btn-lg">Explore Solutions</a>
+        <a href="about.html" class="btn btn-secondary btn-lg" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2);">About Ivy Africa</a>
+      </div>
+      <div class="stats-bar">
+        <div class="stat-item"><h4>49+</h4><p>Accredited Courses</p></div>
+        <div class="stat-item"><h4>25+</h4><p>Global Partners</p></div>
+        <div class="stat-item"><h4>500+</h4><p>Clients Served</p></div>
+        <div class="stat-item"><h4>6</h4><p>Divisions</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS CAROUSEL -->
+<section class="marquee-section" style="padding:3rem 0;">
+  <div class="section-inner" style="text-align:center;margin-bottom:1.5rem;">
+    <span class="section-label">Trusted By Industry Leaders</span>
+    <h2 class="section-title" style="font-size:1.5rem;">Our Partners & Brands</h2>
+  </div>
+  <div class="marquee-mask">
+    <div class="marquee-row">
+      <div class="marquee-item"><img src="dell-text.png" alt="Dell Technologies"></div>
+      <div class="marquee-item"><img src="hp.jpg" alt="HP"></div>
+      <div class="marquee-item"><img src="lenovo.png" alt="Lenovo"></div>
+      <div class="marquee-item"><img src="microsoft.png" alt="Microsoft"></div>
+      <div class="marquee-item"><img src="aws.png" alt="AWS"></div>
+      <div class="marquee-item"><img src="huawei.png" alt="Huawei"></div>
+      <div class="marquee-item"><img src="huawei-cloud.png" alt="Huawei Cloud"></div>
+      <div class="marquee-item"><img src="ibm.png" alt="IBM"></div>
+      <div class="marquee-item"><img src="veeam.png" alt="Veeam"></div>
+      <div class="marquee-item"><img src="zoom.png" alt="Zoom"></div>
+      <div class="marquee-item"><img src="asus.png" alt="ASUS"></div>
+      <div class="marquee-item"><img src="nvidia.png" alt="NVIDIA"></div>
+      <div class="marquee-item"><img src="zebra.png" alt="Zebra"></div>
+      <div class="marquee-item"><img src="eaton.png" alt="Eaton"></div>
+      <div class="marquee-item"><img src="proline.png" alt="Proline"></div>
+      <div class="marquee-item"><img src="mimecast.png" alt="Mimecast"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item"><img src="dell-text.png" alt="Dell Technologies"></div>
+      <div class="marquee-item"><img src="hp.jpg" alt="HP"></div>
+      <div class="marquee-item"><img src="lenovo.png" alt="Lenovo"></div>
+      <div class="marquee-item"><img src="microsoft.png" alt="Microsoft"></div>
+      <div class="marquee-item"><img src="aws.png" alt="AWS"></div>
+      <div class="marquee-item"><img src="huawei.png" alt="Huawei"></div>
+      <div class="marquee-item"><img src="huawei-cloud.png" alt="Huawei Cloud"></div>
+      <div class="marquee-item"><img src="ibm.png" alt="IBM"></div>
+      <div class="marquee-item"><img src="veeam.png" alt="Veeam"></div>
+      <div class="marquee-item"><img src="zoom.png" alt="Zoom"></div>
+      <div class="marquee-item"><img src="asus.png" alt="ASUS"></div>
+      <div class="marquee-item"><img src="nvidia.png" alt="NVIDIA"></div>
+      <div class="marquee-item"><img src="zebra.png" alt="Zebra"></div>
+      <div class="marquee-item"><img src="eaton.png" alt="Eaton"></div>
+      <div class="marquee-item"><img src="proline.png" alt="Proline"></div>
+      <div class="marquee-item"><img src="mimecast.png" alt="Mimecast"></div>
+    </div>
+  </div>
+  <div class="marquee-mask" style="margin-top:1.5rem;">
+    <div class="marquee-row reverse">
+      <div class="marquee-item"><img src="ibm.png" alt="IBM"></div>
+      <div class="marquee-item"><img src="veeam.png" alt="Veeam"></div>
+      <div class="marquee-item"><img src="zoom.png" alt="Zoom"></div>
+      <div class="marquee-item"><img src="asus.png" alt="ASUS"></div>
+      <div class="marquee-item"><img src="nvidia.png" alt="NVIDIA"></div>
+      <div class="marquee-item"><img src="zebra.png" alt="Zebra"></div>
+      <div class="marquee-item"><img src="eaton.png" alt="Eaton"></div>
+      <div class="marquee-item"><img src="proline.png" alt="Proline"></div>
+      <div class="marquee-item"><img src="mimecast.png" alt="Mimecast"></div>
+      <div class="marquee-item"><img src="dell-text.png" alt="Dell Technologies"></div>
+      <div class="marquee-item"><img src="hp.jpg" alt="HP"></div>
+      <div class="marquee-item"><img src="lenovo.png" alt="Lenovo"></div>
+      <div class="marquee-item"><img src="microsoft.png" alt="Microsoft"></div>
+      <div class="marquee-item"><img src="aws.png" alt="AWS"></div>
+      <div class="marquee-item"><img src="huawei.png" alt="Huawei"></div>
+      <div class="marquee-item"><img src="huawei-cloud.png" alt="Huawei Cloud"></div>
+      <!-- duplicate -->
+      <div class="marquee-item"><img src="ibm.png" alt="IBM"></div>
+      <div class="marquee-item"><img src="veeam.png" alt="Veeam"></div>
+      <div class="marquee-item"><img src="zoom.png" alt="Zoom"></div>
+      <div class="marquee-item"><img src="asus.png" alt="ASUS"></div>
+      <div class="marquee-item"><img src="nvidia.png" alt="NVIDIA"></div>
+      <div class="marquee-item"><img src="zebra.png" alt="Zebra"></div>
+      <div class="marquee-item"><img src="eaton.png" alt="Eaton"></div>
+      <div class="marquee-item"><img src="proline.png" alt="Proline"></div>
+      <div class="marquee-item"><img src="mimecast.png" alt="Mimecast"></div>
+      <div class="marquee-item"><img src="dell-text.png" alt="Dell Technologies"></div>
+      <div class="marquee-item"><img src="hp.jpg" alt="HP"></div>
+      <div class="marquee-item"><img src="lenovo.png" alt="Lenovo"></div>
+      <div class="marquee-item"><img src="microsoft.png" alt="Microsoft"></div>
+      <div class="marquee-item"><img src="aws.png" alt="AWS"></div>
+      <div class="marquee-item"><img src="huawei.png" alt="Huawei"></div>
+      <div class="marquee-item"><img src="huawei-cloud.png" alt="Huawei Cloud"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVISIONS -->
+<section class="section" id="divisions">
+  <div class="section-inner">
+    <div class="section-header center animate-on-scroll">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Six Divisions, One Mission</h2>
+      <p class="section-subtitle">Comprehensive solutions spanning education, technology, and business development across the African continent.</p>
+    </div>
+    <div class="grid-3" style="margin-top:3rem;">
+      <div class="division-card animate-on-scroll stagger-1">
+        <div class="div-img"><img src="div-training.jpg" alt="Training" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#10b981,#059669)'"></div>
+        <div class="div-body">
+          <span class="div-tag">Education</span>
+          <h3>Training & Certification</h3>
+          <p>49+ accredited courses across CompTIA, PECB, ISACA, and SACE. Corporate upskilling and professional certification programmes.</p>
+          <a href="training.html" class="div-link">Explore Courses <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="division-card animate-on-scroll stagger-2">
+        <div class="div-img"><img src="div-technology.jpg" alt="Technology" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0ea5e9,#0284c7)'"></div>
+        <div class="div-body">
+          <span class="div-tag">Solutions</span>
+          <h3>Technology Solutions</h3>
+          <p>OEM hardware from Dell, HP, Lenovo, and Microsoft. Cloud, cybersecurity, data management, and infrastructure services.</p>
+          <a href="technology.html" class="div-link">View Solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="division-card animate-on-scroll stagger-3">
+        <div class="div-img"><img src="div-supplies.jpg" alt="Supplies" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#f59e0b,#d97706)'"></div>
+        <div class="div-body">
+          <span class="div-tag">Resources</span>
+          <h3>Learning Supplies</h3>
+          <p>Digital and print educational resources, textbooks, assessment materials, and curriculum-aligned content for all phases.</p>
+          <a href="basic-ed.html" class="div-link">Browse Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="division-card animate-on-scroll stagger-1">
+        <div class="div-img"><img src="div-smme.jpg" alt="SMME" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#8b5cf6,#7c3aed)'"></div>
+        <div class="div-body">
+          <span class="div-tag">Development</span>
+          <h3>SMME Development</h3>
+          <p>SETA-accredited programmes, business incubation, funding access, and digital skills training for small enterprises.</p>
+          <a href="smme.html" class="div-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="division-card animate-on-scroll stagger-2">
+        <div class="div-img"><img src="div-consultancy.jpg" alt="Consultancy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#ec4899,#db2777)'"></div>
+        <div class="div-body">
+          <span class="div-tag">Advisory</span>
+          <h3>Consultancy</h3>
+          <p>Digital transformation strategy, IT governance, risk management, and technology roadmap development for enterprises.</p>
+          <a href="consultancy.html" class="div-link">Discover <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="division-card animate-on-scroll stagger-3">
+        <div class="div-img"><img src="div-k12.jpg" alt="K12 & Ed-Tech" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#10b981,#0ea5e9)'"></div>
+        <div class="div-body">
+          <span class="div-tag">Education</span>
+          <h3>K12 & Ed-Tech</h3>
+          <p>Higher Education, TVET, and Basic Education solutions. Smart classrooms, STEM labs, and digital learning infrastructure.</p>
+          <a href="higher-ed.html" class="div-link">Explore Ed-Tech <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="section-inner text-center">
+    <div class="animate-on-scroll" style="max-width:600px;margin:0 auto;">
+      <span class="section-label">Start Today</span>
+      <h2 class="section-title">Ready to Transform Your Organisation?</h2>
+      <p class="section-subtitle" style="margin:1.5rem 0 2rem;">Speak with our team to discover how Ivy Africa can accelerate your digital journey.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- SYNDICATED PARTNER CONTENT -->
+<section class="syndicated-section">
+  <div class="section-inner">
+    <div class="section-header center animate-on-scroll">
+      <span class="section-label">Partner Showcases</span>
+      <h2 class="section-title">Explore Partner Solutions</h2>
+    </div>
+    <!-- Dell Showcase -->
+    <div style="margin-top:2rem;background:#fff;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-subtle);">
+      <div style="padding:1rem 1.5rem;background:var(--navy-900);color:#fff;display:flex;align-items:center;gap:.75rem;">
+        <img src="dell-text.png" alt="Dell" style="height:24px;width:auto;filter:brightness(0) invert(1);">
+        <span style="font-size:.875rem;font-weight:600;">Dell Technologies Showcase</span>
+      </div>
+      <div class="sw_frame_div" style="height:2000px;width:100%;">
+        <iframe class="sw_frame" allow-page-override="true" add-utm-params="true" data-src="https://wcs-dellshowcase-ivyafrica.swcontentsyndication.com/Home" style="height:2000px;width:100%;border:none;"></iframe>
+        <script src="https://wcs-dellshowcase-ivyafrica.swcontentsyndication.com/sw/app/CommonUI/JS/setupIframeV2.js"></script>
+      </div>
+    </div>
+    <!-- Lenovo Showcase -->
+    <div style="margin-top:2rem;background:#fff;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-subtle);">
+      <div style="padding:1rem 1.5rem;background:var(--navy-900);color:#fff;display:flex;align-items:center;gap:.75rem;">
+        <img src="lenovo.png" alt="Lenovo" style="height:24px;width:auto;filter:brightness(0) invert(1);">
+        <span style="font-size:.875rem;font-weight:600;">Lenovo Brand Showcase</span>
+      </div>
+      <div id="ccs-brand-showcase"></div>
+      <script type="text/javascript">
+      var ccs_cc_args = ccs_cc_args || [];
+      (function () {
+         var o = ccs_cc_args; o.push(["_SKey", "cf186257"]); o.push(["_ZoneId", "b12f568969"]);
+         var sc = document.createElement("script"); sc.type = "text/javascript"; sc.async = true;
+         sc.src = ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.cs.1worldsync.com/jsc/h1ws.js";
+         var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(sc, n);
+      })();
+      </script>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-link" style="color:#fff;">
+          <img src="logo.svg" alt="Ivy Africa" class="logo-img" style="filter:brightness(0) invert(1);">
+          <span class="logo-text">Ivy <span style="color:var(--accent-primary);">Africa</span></span>
+        </a>
+        <p>Empowering African organisations with world-class technology, training, and digital transformation solutions.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-title">Offerings</h4>
+        <ul class="footer-links">
+          <li><a href="training.html">Training</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="smme.html">SMME</a></li>
+          <li><a href="consultancy.html">Consultancy</a></li>
+          <li><a href="higher-ed.html">Higher Ed</a></li>
+          <li><a href="tvet.html">TVET</a></li>
+          <li><a href="basic-ed.html">Basic Education</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#team">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Contact</h4>
+        <ul class="footer-links">
+          <li>info@ivyafrica.co.za</li>
+          <li>+27 11 123 4567</li>
+          <li>Johannesburg, South Africa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ivy Africa. All rights reserved.</p>
+      <p>Designed with precision.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  window.addEventListener('scroll',()=>{if(window.scrollY>50){header.classList.add('scrolled');header.classList.remove('dark-mode');}else{header.classList.remove('scrolled');header.classList.add('dark-mode');}});
+  const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:.1});
+  document.querySelectorAll('.animate-on-scroll,.animate-fade,.animate-scale').forEach(el=>observer.observe(el));
+  const pContainer=document.getElementById('particles');
+  for(let i=0;i<25;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.width=p.style.height=(Math.random()*6+2)+'px';p.style.animationDuration=(Math.random()*15+10)+'s';p.style.animationDelay=(Math.random()*10)+'s';pContainer.appendChild(p);}
+</script>
+</body>
+</html>
