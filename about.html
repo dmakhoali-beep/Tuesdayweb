@@ -3,237 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us — Ivy Africa</title>
+<title>About | Ivy Africa</title>
 <link rel="stylesheet" href="shared.css">
-<style>
-  .timeline{position:relative;padding-left:2rem;}
-  .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent-gradient);}
-  .timeline-item{position:relative;padding-bottom:2.5rem;}
-  .timeline-item::before{content:'';position:absolute;left:-2rem;top:.25rem;width:12px;height:12px;background:var(--accent-primary);border-radius:50%;transform:translateX(-5px);border:3px solid #fff;box-shadow:0 0 0 2px var(--accent-primary);}
-  .timeline-year{font-size:.75rem;font-weight:700;color:var(--accent-primary);letter-spacing:.05em;margin-bottom:.25rem;}
-  .timeline-item h4{font-size:1rem;font-weight:700;margin-bottom:.25rem;}
-  .timeline-item p{font-size:.875rem;color:var(--text-secondary);}
-  .value-card{text-align:center;padding:2.5rem 1.5rem;}
-  .value-card .value-icon{width:56px;height:56px;margin:0 auto 1rem;background:var(--accent-glow);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
-  .value-card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem;}
-  .value-card p{font-size:.8125rem;color:var(--text-secondary);line-height:1.6;}
-  .founder-card{text-align:center;}
-  .founder-card .founder-img{width:120px;height:120px;border-radius:50%;background:var(--bg-tertiary);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:.75rem;overflow:hidden;}
-  .founder-card h4{font-size:1rem;font-weight:700;}
-  .founder-card p{font-size:.8125rem;color:var(--text-secondary);}
-</style>
+<style></style>
 </head>
 <body>
-
-<header class="site-header" id="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo-link">
-      <img src="logo.svg" alt="Ivy Africa" class="logo-img">
-      <span class="logo-text">Ivy <span>Africa</span></span>
-    </a>
-    <nav class="nav-desktop">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link active">About</a>
-      <div class="dropdown">
-        <button class="nav-link dropdown-toggle">Offerings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="dropdown-menu">
-          <a href="training.html" class="dropdown-item">Training & Certification</a>
-          <a href="technology.html" class="dropdown-item">Technology Solutions</a>
-          <a href="smme.html" class="dropdown-item">SMME Development</a>
-          <a href="consultancy.html" class="dropdown-item">Consultancy</a>
-          <div class="dropdown-divider"></div>
-          <div class="dropdown-header">K12 & Ed-Tech</div>
-          <a href="higher-ed.html" class="dropdown-item">Higher Education</a>
-          <a href="tvet.html" class="dropdown-item">TVET Colleges</a>
-          <a href="basic-ed.html" class="dropdown-item">Basic Education</a>
-        </div>
-      </div>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <button class="nav-link" onclick="document.getElementById('searchOverlay').classList.add('active')" aria-label="Search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      </button>
-      <a href="contact.html" class="header-cta">Get Started</a>
-    </nav>
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Ivy<span>Africa</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="learning-supplies.html">Supplies</a></li>
+      <li><a href="smme.html">SMME</a></li>
+      <li><a href="consultancy.html">Consultancy</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </div>
 </header>
-
-<div class="search-overlay" id="searchOverlay">
-  <button class="search-close" onclick="document.getElementById('searchOverlay').classList.remove('active')">&times;</button>
-  <div class="search-box">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-    <input type="text" placeholder="Search..." id="searchInput">
-  </div>
+<section class="hero" style="min-height:40vh;">
+<video autoplay muted loop playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-network-connections-27611-large.mp4" type="video/mp4"></video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+  <h1>About <span class="highlight">Ivy Africa</span></h1>
+  <p>A decade of empowering African enterprises through technology and education.</p>
 </div>
+</section>
 
-<section class="section" style="padding-top:120px;background:var(--bg-secondary);">
-  <div class="section-inner">
-    <div class="section-header center animate-on-scroll">
-      <span class="section-label">Our Story</span>
-      <h1 class="section-title">About Ivy Africa</h1>
-      <p class="section-subtitle">Founded with a vision to bridge the digital divide, Ivy Africa has grown into a trusted partner for organisations across the continent.</p>
+<section>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+    <div>
+      <h2 style="font-size:2rem;font-weight:800;margin-bottom:1rem;">Our Story</h2>
+      <p style="color:var(--text-muted);margin-bottom:1rem;">Founded in 2016 in Aliwal North, Eastern Cape, Ivy Africa began with a simple mission: bridge the technology gap for African businesses. What started as a small IT training provider has grown into a multi-division enterprise serving clients across five countries.</p>
+      <p style="color:var(--text-muted);margin-bottom:1rem;">We believe that access to world-class technology education and enterprise solutions should not be limited by geography. Our team of certified trainers, engineers, and consultants work tirelessly to deliver international-standard services with local understanding.</p>
+      <p style="color:var(--text-muted);">Today, Ivy Africa is a registered private company (2016/041769/07) and an authorised partner for global technology leaders including CompTIA, PECB, Dell, HP, Lenovo, Huawei, Eaton, and ASUS.</p>
+    </div>
+    <div class="stats-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="stat-card"><div class="number">2016</div><div class="label">Founded</div></div>
+      <div class="stat-card"><div class="number">5</div><div class="label">Countries</div></div>
+      <div class="stat-card"><div class="number">35+</div><div class="label">Courses</div></div>
+      <div class="stat-card"><div class="number">8</div><div class="label">Partners</div></div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="section-inner">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
-      <div class="animate-on-scroll">
-        <span class="section-label">Timeline</span>
-        <h2 class="section-title" style="font-size:1.75rem;">Our Journey</h2>
-        <div class="timeline" style="margin-top:2rem;">
-          <div class="timeline-item">
-            <div class="timeline-year">2019</div>
-            <h4>Ivy Africa Founded</h4>
-            <p>Established in Johannesburg with a focus on IT training and certification.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2020</div>
-            <h4>First Major Partnership</h4>
-            <p>Secured Dell Technologies partnership and expanded into hardware solutions.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2021</div>
-            <h4>Training Division Launch</h4>
-            <p>Launched accredited training programmes with CompTIA, PECB, and ISACA.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2022</div>
-            <h4>SMME & Consultancy</h4>
-            <p>Added SMME development and IT consultancy divisions.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2023</div>
-            <h4>Ed-Tech Expansion</h4>
-            <p>Entered the education technology market with K12 and higher ed solutions.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2024</div>
-            <h4>Pan-African Growth</h4>
-            <p>Expanded operations into neighbouring countries and broadened partner network.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2025</div>
-            <h4>Full-Spectrum Partner</h4>
-            <p>Recognised as a leading technology and training partner across six divisions.</p>
-          </div>
-        </div>
-      </div>
-      <div class="animate-on-scroll">
-        <span class="section-label">What Drives Us</span>
-        <h2 class="section-title" style="font-size:1.75rem;">Our Values</h2>
-        <div class="grid-2" style="margin-top:2rem;">
-          <div class="card value-card">
-            <div class="value-icon">🌱</div>
-            <h3>Growth</h3>
-            <p>We believe in continuous learning and improvement for our team and clients.</p>
-          </div>
-          <div class="card value-card">
-            <div class="value-icon">🤝</div>
-            <h3>Partnership</h3>
-            <p>Long-term relationships built on trust, transparency, and shared success.</p>
-          </div>
-          <div class="card value-card">
-            <div class="value-icon">⚡</div>
-            <h3>Innovation</h3>
-            <p>Embracing new technologies and approaches to solve complex challenges.</p>
-          </div>
-          <div class="card value-card">
-            <div class="value-icon">🎯</div>
-            <h3>Excellence</h3>
-            <p>Delivering world-class quality in every solution, course, and interaction.</p>
-          </div>
-          <div class="card value-card">
-            <div class="value-icon">🌍</div>
-            <h3>Impact</h3>
-            <p>Creating meaningful change in African organisations and communities.</p>
-          </div>
-          <div class="card value-card">
-            <div class="value-icon">🔒</div>
-            <h3>Integrity</h3>
-            <p>Ethical practices, honest advice, and accountability in all we do.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<section style="background:var(--bg-panel);border-radius:2rem;margin:0 1rem;">
+  <h2 class="section-title">Mission, Vision & Values</h2>
+  <div class="card-grid">
+    <div class="card"><h3>🎯 Mission</h3><p>To democratise access to world-class technology education and enterprise solutions across Africa, enabling sustainable economic growth and digital transformation.</p></div>
+    <div class="card"><h3>👁️ Vision</h3><p>To become Africa's most trusted technology and education partner, recognised for excellence, innovation, and social impact in every community we serve.</p></div>
+    <div class="card"><h3>⚖️ Values</h3><p>Integrity in every engagement. Excellence in every delivery. Innovation in every solution. Inclusion in every opportunity. Impact in every community.</p></div>
   </div>
 </section>
 
-<section class="section" style="background:var(--bg-secondary);" id="team">
-  <div class="section-inner">
-    <div class="section-header center animate-on-scroll">
-      <span class="section-label">Leadership</span>
-      <h2 class="section-title">Meet the Founders</h2>
-    </div>
-    <div class="grid-3" style="margin-top:3rem;">
-      <div class="founder-card animate-on-scroll stagger-1">
-        <div class="founder-img">[Founder Photo]</div>
-        <h4>Founder Name</h4>
-        <p>Chief Executive Officer</p>
-      </div>
-      <div class="founder-card animate-on-scroll stagger-2">
-        <div class="founder-img">[Founder Photo]</div>
-        <h4>Founder Name</h4>
-        <p>Chief Technology Officer</p>
-      </div>
-      <div class="founder-card animate-on-scroll stagger-3">
-        <div class="founder-img">[Founder Photo]</div>
-        <h4>Founder Name</h4>
-        <p>Chief Operations Officer</p>
-      </div>
-    </div>
+<section>
+  <h2 class="section-title">Our Journey</h2>
+  <div style="position:relative;padding-left:2rem;border-left:2px solid var(--accent-violet);">
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2016</strong> — Ivy Africa founded in Aliwal North, Eastern Cape</div>
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2017</strong> — First CompTIA partnership secured</div>
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2018</strong> — Expanded into technology hardware resale</div>
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2019</strong> — PECB partnership for ISO certification training</div>
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2020</strong> — Launched virtual training delivery platform</div>
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2021</strong> — SMME Support division established</div>
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2022</strong> — Expanded to Botswana and Namibia</div>
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2023</strong> — Learning Supplies division launched</div>
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2024</strong> — Consultancy division and ISO certification services</div>
+    <div style="margin-bottom:2rem;"><strong style="color:var(--accent-gold);">2025</strong> — Expanded to Zambia and Nigeria</div>
+    <div><strong style="color:var(--accent-gold);">2026</strong> — 10-year milestone, 35+ courses, 5 divisions, 5 countries</div>
   </div>
 </section>
-
-<footer class="site-footer">
+<footer>
   <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo-link" style="color:#fff;">
-          <img src="logo.svg" alt="Ivy Africa" class="logo-img" style="filter:brightness(0) invert(1);">
-          <span class="logo-text">Ivy <span style="color:var(--accent-primary);">Africa</span></span>
-        </a>
-        <p>Empowering African organisations with world-class technology, training, and digital transformation solutions.</p>
-      </div>
-      <div>
-        <h4 class="footer-title">Offerings</h4>
-        <ul class="footer-links">
-          <li><a href="training.html">Training</a></li>
-          <li><a href="technology.html">Technology</a></li>
-          <li><a href="smme.html">SMME</a></li>
-          <li><a href="consultancy.html">Consultancy</a></li>
-          <li><a href="higher-ed.html">Higher Ed</a></li>
-          <li><a href="tvet.html">TVET</a></li>
-          <li><a href="basic-ed.html">Basic Education</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-title">Company</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-title">Contact</h4>
-        <ul class="footer-links">
-          <li>info@ivyafrica.co.za</li>
-          <li>+27 11 123 4567</li>
-          <li>Johannesburg, South Africa</li>
-        </ul>
-      </div>
+    <div class="footer-col">
+      <h4>Ivy Africa</h4>
+      <p style="color:var(--text-muted);font-size:0.875rem;">Empowering African enterprises through world-class technology, training, and consultancy.</p>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Ivy Africa. All rights reserved.</p>
+    <div class="footer-col">
+      <h4>Divisions</h4>
+      <a href="training.html">Training & Certification</a>
+      <a href="technology.html">Technology Solutions</a>
+      <a href="learning-supplies.html">Learning Supplies</a>
+      <a href="smme.html">SMME Support</a>
+      <a href="consultancy.html">Consultancy</a>
     </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:0518800404">051 880 0404</a>
+      <a href="mailto:info@ivyafrica.co.za">info@ivyafrica.co.za</a>
+      <span style="color:var(--text-muted);font-size:0.875rem;">Aliwal North, Eastern Cape</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Ivy Africa (Pty) Ltd. Reg: 2016/041769/07. All rights reserved.</p>
   </div>
 </footer>
-
+<a href="contact.html" class="floating-cta">Get a Free Quote</a>
 <script>
-  const header=document.getElementById('header');
-  window.addEventListener('scroll',()=>{if(window.scrollY>50){header.classList.add('scrolled');}else{header.classList.remove('scrolled');}});
-  const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:.1});
-  document.querySelectorAll('.animate-on-scroll,.animate-fade,.animate-scale').forEach(el=>observer.observe(el));
+document.querySelectorAll('.accordion-header').forEach(h=>{
+  h.addEventListener('click',()=>{ h.parentElement.classList.toggle('open'); });
+});
 </script>
 </body>
 </html>
